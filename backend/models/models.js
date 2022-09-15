@@ -13,7 +13,6 @@ const User = sequelize.define('user', {
     adcount: { type: DataTypes.INTEGER },
     countryid: { type: DataTypes.STRING },
     roleid: { type: DataTypes.STRING },
-    rating: { type: DateTypes.STRING },
     rating: { type: DateTypes.DOUBLE }
 })
 
