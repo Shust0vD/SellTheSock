@@ -1,6 +1,5 @@
 const sequelize = require('../db')
 const { DataTypes } = require('sequelize')
-const { FOREIGNKEYS } = require('sequelize/types/query-types')
 
 const User = sequelize.define('user', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -9,10 +8,8 @@ const User = sequelize.define('user', {
     email: { type: DataTypes.STRING, unique: true },
     password: { type: DataTypes.STRING },
     phonenumber: { type: DataTypes.STRING, unique: true },
-    dateofregistration: { type: DataTypes.TIME },
+    dateofregistration: { type: DataTypes.DATE},
     adcount: { type: DataTypes.INTEGER },
-    countryid: { type: DataTypes.STRING },
-    roleid: { type: DataTypes.STRING },
     rating: { type: DateTypes.DOUBLE }
 })
 
