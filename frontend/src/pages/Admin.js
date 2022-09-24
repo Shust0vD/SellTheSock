@@ -1,11 +1,7 @@
 import React from 'react';
-import {observer} from "mobx-react-lite";
 
-const Admin = observer(() => {
-
-    return (
-        <div>Admin panel</div>
-    );
-});
+const Admin = () => {
+  return <div>hello admin</div>;
+};
 
 export default Admin;

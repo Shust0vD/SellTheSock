@@ -1,11 +1,7 @@
 import React from 'react';
-import {observer} from "mobx-react-lite";
 
-const Ads = observer(() => {
-
-    return (
-        <div>List of ads</div>
-    );
-});
+const Ads = () => {
+  return <div>List of ADDDS</div>;
+};
 
 export default Ads;
