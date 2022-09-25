@@ -15,8 +15,13 @@ const Auth = () => {
   const isLogin = location.pathname === LOGIN_ROUTE;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordRepeat, setPasswordRepeat] = useState('');
 
   const click = async () => {
+    if (!isLogin && password !== passwordRepeat) {
+      alert('Пароли не совпадают');
+      return;
+    }
     try {
       let data;
       if (isLogin) {
@@ -40,21 +45,30 @@ const Auth = () => {
         <Form>
           <Form.Control
             className="mt-3"
-            placeholder="Введите ваш username..."
+            placeholder="Введите username..."
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <Form.Control
             className="mt-3"
-            placeholder="Введите ваш пароль..."
+            placeholder="Введите пароль..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
           />
+          {!isLogin && (
+            <Form.Control
+              className="mt-3"
+              placeholder="Повторите пароль..."
+              value={passwordRepeat}
+              onChange={(e) => setPasswordRepeat(e.target.value)}
+              type="password"
+            />
+          )}
           <Row>
             {isLogin ? (
               <div>
-                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся!</NavLink>
+                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь!</NavLink>
               </div>
             ) : (
               <div>
