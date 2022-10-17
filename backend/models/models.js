@@ -3,6 +3,7 @@ const { DataTypes } = require('sequelize');
 
 const User = sequelize.define('user', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  username: { type: DataTypes.STRING, unique: true },
   firstname: { type: DataTypes.STRING },
   secondname: { type: DataTypes.STRING },
   email: { type: DataTypes.STRING, unique: true },
@@ -10,15 +11,16 @@ const User = sequelize.define('user', {
   phonenumber: { type: DataTypes.STRING, unique: true },
   dateofregistration: { type: DataTypes.DATE},
   adcount: { type: DataTypes.INTEGER },
-  rating: { type: DateTypes.DOUBLE }
+  rating: { type: DateTypes.DOUBLE },
+  role: { type: DataTypes.STRING, defaultValue: 'user' },
 })
 
-const user_Favorites = sequelize.define('user_fav', {
+const UserFavorites = sequelize.define('user_fav', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   user_id: { type: DataTypes.INTEGER },
   ad_id: {type: DataTypes.INTEGER}
 })
-const user_Ads = sequelize.define('user_ads', {
+const UserAds = sequelize.define('user_ads', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   user_id: { type: DataTypes.INTEGER },
   ad_id: { type: DataTypes.INTEGER }
@@ -30,46 +32,46 @@ const Ad = sequelize.define('ad', {
   price: { type: DataTypes.INTEGER },
   img: {type:DataTypes.BLOB}
 })
-const ad_Rating = sequelize.define('ad_rat', {
+const AdRating = sequelize.define('ad_rat', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   ad_id: { type: DataTypes.INTEGER },
   user_id: { type: DataTypes.INTEGER },
   rating: { type: DataTypes.DOUBLE }
 })
-const ad_Info = sequelize.define('ad_info', {
+const AdInfo = sequelize.define('ad_info', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING },
   description: { type: DataTypes.STRING }
 })
 
-Ad.hasOne(ad_Info)
-Ad.belongsTo(Ad)
+Ad.hasOne(AdInfo)
+AdInfo.belongsTo(Ad)
 
-User.hasMany(user_Favorites)
-user_Favorites.belongsTo(User)
+User.hasMany(UserFavorites)
+UserFavorites.belongsTo(User)
 
-Ad.hasMany(user_Ads)
-user_Ads.belongsTo(Ad)
+Ad.hasMany(UserAds)
+UserAds.belongsTo(Ad)
 
-User.hasMany(user_Ads)
-user_Ads.belongsTo(User)
+User.hasMany(UserAds)
+UserAds.belongsTo(User)
 
-Ad.hasMany(user_Favorites)
-user_Favorites.belongsTo(Ad)
+Ad.hasMany(UserFavorites)
+UserFavorites.belongsTo(Ad)
 
-User.hasMany(ad_Rating)
-ad_Rating.belongsTo(User)
+User.hasMany(AdRating)
+AdRating.belongsTo(User)
 
-Ad.hasMany(ad_Rating)
-ad_Rating.belongsTo(Ad)
+Ad.hasMany(AdRating)
+AdRating.belongsTo(Ad)
 
 
 module.exports = {
   User,
-  user_Favorites,
-  user_Ads,
+  UserFavorites,
+  UserAds,
   Ad,
-  ad_Rating,
-  ad_Info
+  AdRating,
+  AdInfo
 }
 
