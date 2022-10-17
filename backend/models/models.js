@@ -6,16 +6,15 @@ const User = sequelize.define('user', {
   username: { type: DataTypes.STRING, unique: true },
   firstname: { type: DataTypes.STRING },
   secondname: { type: DataTypes.STRING },
-  email: { type: DataTypes.STRING, unique: true },
   password: { type: DataTypes.STRING },
-  phonenumber: { type: DataTypes.STRING, unique: true },
-  dateofregistration: { type: DataTypes.DATE},
-  adcount: { type: DataTypes.INTEGER },
+  phoneNumber: { type: DataTypes.STRING, unique: true },
+  dateOfRegistration: { type: DataTypes.DATE},
+  adCount: { type: DataTypes.INTEGER },
   rating: { type: DateTypes.DOUBLE },
   role: { type: DataTypes.STRING, defaultValue: 'user' },
 })
 
-const UserFavorites = sequelize.define('user_fav', {
+const UserFavorites = sequelize.define('userfav', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   user_id: { type: DataTypes.INTEGER },
   ad_id: {type: DataTypes.INTEGER}
