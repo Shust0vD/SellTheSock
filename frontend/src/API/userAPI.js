@@ -18,3 +18,13 @@ export const check = async () => {
   localStorage.setItem('token', data.token);
   return jwt_decode(data.token);
 };
+
+export const getUserInfo = async (id) => {
+  const { data } = await $host.get('api/user/info/' + id);
+  return data;
+};
+
+export const editPersonalData = async (id, firstname, secondName, phoneNumber) => {
+  const { data } = await $authHost.post('api/user/edit/' + id, { firstname, secondName, phoneNumber });
+  return data;
+};

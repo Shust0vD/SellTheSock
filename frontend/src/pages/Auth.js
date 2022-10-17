@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { LOGIN_ROUTE, REGISTRATION_ROUTE, ADS_ROUTE } from '../utils/consts';
-import { login, registration } from '../API/userAPI';
+import { login, registration, getUserInfo } from '../API/userAPI';
 import { Context } from '../index';
 
 const Auth = () => {
@@ -29,9 +29,11 @@ const Auth = () => {
       } else {
         data = await registration(username, password);
       }
+      const userInfo = await getUserInfo(data.id);
       user.setUser(data);
+      user.setUserInfo(userInfo);
       user.setIsAuth(true);
-      user.setIsAdmin(data.role === 'admin' ? true : false);
+      user.setIsAdmin(userInfo.role === 'admin' ? true : false);
       history(ADS_ROUTE);
     } catch (e) {
       alert(e.response.data.message);

@@ -13,6 +13,7 @@ const NavBar = () => {
 
   const logOut = () => {
     user.setUser({});
+    user.setUserInfo({});
     user.setIsAuth(false);
     user.setIsAdmin(false);
     navigate(ADS_ROUTE);
@@ -26,7 +27,7 @@ const NavBar = () => {
           {user.isAuth ? (
             <Nav>
               {user.isAdmin && <Button onClick={() => navigate(ADMIN_ROUTE)}>Администрация</Button>}
-              <Button onClick={() => navigate(ACCOUNT_ROUTE)}>Личный кабинет</Button>
+              <Button onClick={() => navigate(ACCOUNT_ROUTE + '/' + user.userInfo.id)}>Личный кабинет</Button>
               <Button onClick={() => logOut()}>Выйти</Button>
             </Nav>
           ) : (
