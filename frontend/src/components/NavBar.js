@@ -22,8 +22,8 @@ const NavBar = () => {
   return (
     <Navbar>
       <Container>
-        <Nav>
-          <NavLink to={ADS_ROUTE}>SellTheStock</NavLink>
+        <Nav className="navContainer">
+          <NavLink className="logo" to={ADS_ROUTE}>SellTheStock</NavLink>
           {user.isAuth ? (
             <Nav>
               {user.isAdmin && <Button onClick={() => navigate(ADMIN_ROUTE)}>Администрация</Button>}
