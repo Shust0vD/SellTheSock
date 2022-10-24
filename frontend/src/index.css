@@ -5,21 +5,68 @@
 }
 
 body {
-    background:rgb(197, 212, 236);
+    background:rgb(250, 252, 255);
     color: #222;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 300;
 }
 
 .logo{
+    color:rgb(250, 252, 255);
     font-weight: 600;
     font-size: 20px;
 }
 
+.navWrapper {
+    background:rgb(41, 43, 45);
+    height: 50px;
+    display:flex;
+    align-items: center;
+}
+
 .navContainer {
+    
     display:flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     margin: 30px ;
+}
+
+.authContainer {
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 30px ;
+}
+
+.authFormContainer {
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 30px ;
+}
+
+.btnNavBar {
+    width: 160px;
+    height:30px;
+}
+
+.btnAuth {
+    width: 340px;
+    height:30px;
+}
+
+.mt-3 {
+    width: 340px;
+    height:30px;
+}
+
+.footer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px ;
 }

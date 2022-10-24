@@ -42,9 +42,9 @@ const Auth = () => {
 
   return (
     <Container>
-      <Card>
+      <Card className="authContainer">
         <h2>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
-        <Form>
+        <Form className="authFormContainer">
           <Form.Control
             className="mt-3"
             placeholder="Введите username..."
@@ -67,18 +67,16 @@ const Auth = () => {
               type="password"
             />
           )}
-          <Row>
-            {isLogin ? (
-              <div>
-                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь!</NavLink>
-              </div>
-            ) : (
-              <div>
-                Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
-              </div>
-            )}
-            <Button onClick={click}>{isLogin ? 'Войти' : 'Регистрация'}</Button>
-          </Row>
+          {isLogin ? (
+            <div>
+              Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь!</NavLink>
+            </div>
+          ) : (
+            <div>
+              Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
+            </div>
+          )}
+          <Button className="btnAuth" onClick={click}>{isLogin ? 'Войти' : 'Регистрация'}</Button>
         </Form>
       </Card>
     </Container>
