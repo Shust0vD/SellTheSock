@@ -20,19 +20,19 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar>
+    <Navbar className='navWrapper'>
       <Container>
-        <Nav>
-          <NavLink to={ADS_ROUTE}>SellTheStock</NavLink>
+        <Nav className="navContainer">
+          <NavLink className="logo" to={ADS_ROUTE}>SellTheStock</NavLink>
           {user.isAuth ? (
             <Nav>
-              {user.isAdmin && <Button onClick={() => navigate(ADMIN_ROUTE)}>Администрация</Button>}
-              <Button onClick={() => navigate(ACCOUNT_ROUTE + '/' + user.userInfo.id)}>Личный кабинет</Button>
-              <Button onClick={() => logOut()}>Выйти</Button>
+              {user.isAdmin && <Button className="btnNavBar" onClick={() => navigate(ADMIN_ROUTE)}>Администрация</Button>}
+              <Button className="btnNavBar" onClick={() => navigate(ACCOUNT_ROUTE + '/' + user.userInfo.id)}>Личный кабинет</Button>
+              <Button className="btnNavBar" onClick={() => logOut()}>Выйти</Button>
             </Nav>
           ) : (
             <Nav>
-              <Button onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</Button>
+              <Button className="btnNavBar" onClick={() => navigate(LOGIN_ROUTE)}>Авторизация</Button>
             </Nav>
           )}
         </Nav>
