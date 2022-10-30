@@ -14,6 +14,26 @@ const User = sequelize.define('user', {
   role: { type: DataTypes.STRING, defaultValue: 'user' },
 });
 
+const Ad = sequelize.define('ads', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  title: { type: DataTypes.STRING },
+  description: { type: DataTypes.STRING },
+  price: { type: DataTypes.DOUBLE },
+  img: { type: DataTypes.STRING },
+});
+
+const Rating = sequelize.define('rating', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  rate: { type: DataTypes.INTEGER, allowNull: false },
+  evaluator_id: { type: DataTypes.INTEGER, allowNull: false },
+  evaluated_id: { type: DataTypes.INTEGER, allowNull: false },
+});
+
+User.hasMany(Ad);
+Ad.belongsTo(User);
+
 module.exports = {
   User,
+  Ad,
+  Rating,
 };
