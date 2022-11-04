@@ -66,8 +66,35 @@ class UserController {
     if (user.firstname !== firstname) user.firstname = firstname;
     if (user.secondName !== secondName) user.secondName = secondName;
     if (user.phoneNumber !== phoneNumber) user.phoneNumber = phoneNumber;
+    if (user.role !== role) user.role = role;
     await user.save();
     return res.json(omit(user.dataValues, ['password']));
+  }
+
+  async changeRole(req, res, next) {
+    const { id, role } = req.body;
+    const user = await User.findOne({ where: { id } });
+    if (!user) {
+      return next(ApiError.badRequest('Некорректный id пользователя'));
+    }
+    if (user.role !== role) user.role = role;
+    await user.save();
+    return res.json(omit(user.dataValues, ['password']));
+  }
+
+  async getAll(req, res) {
+    const users = await User.findAll();
+    const usersDataValues = users.map((user) => omit(user.dataValues, ['password']));
+    return res.json(usersDataValues);
+  }
+
+  async delete(req, res) {
+    const { id } = req.body;
+    const user = await User.findOne({ where: { id } });
+    if (!user) {
+      return next(ApiError.badRequest('Некорректный id пользователя'));
+    }
+    user.destroy();
   }
 }
 
