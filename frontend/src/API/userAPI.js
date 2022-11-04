@@ -28,3 +28,17 @@ export const editPersonalData = async (id, firstname, secondName, phoneNumber) =
   const { data } = await $authHost.post('api/user/edit/' + id, { firstname, secondName, phoneNumber });
   return data;
 };
+
+export const changeRole = async (id, role) => {
+  const { data } = await $authHost.post('api/user/changeRole/', { id, role });
+  return data;
+};
+
+export const getAll = async () => {
+  const { data } = await $authHost.get('api/user/all');
+  return data;
+};
+
+export const deleteUser = async (id) => {
+  await $authHost.post('api/user/deleteUser/', { id });
+};
