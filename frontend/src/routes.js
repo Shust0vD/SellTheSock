@@ -1,7 +1,7 @@
 import { ADMIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, ADS_ROUTE, ACCOUNT_ROUTE } from './utils/consts';
 import Ads from './pages/Ads';
 import Auth from './pages/Auth';
-import Account from './pages/Account';
+import Account from './pages/Account/Account';
 import Admin from './pages/Admin';
 
 export const adminRoutes = [

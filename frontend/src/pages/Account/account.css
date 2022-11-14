@@ -1,0 +1,41 @@
+
+.accContainer {
+    
+    display:flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    margin: 30px ;
+}
+
+.btnEdit {
+    width: 344px;
+    height:30px;
+}
+
+.accWrapper {
+    background:rgb(241, 241, 241);
+    display:flex;
+    align-items: center;
+}
+
+.btnWrapper {
+    
+    display:flex;
+    flex-direction: column;
+}
+
+.mt-3 {
+    width: 340px;
+    height:30px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+h3 {
+    margin-top:5px;
+}
+
+h2 {
+    margin-top:30px;
+}
