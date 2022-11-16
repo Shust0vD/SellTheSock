@@ -22,6 +22,11 @@ const Auth = () => {
       alert('Пароли не совпадают');
       return;
     }
+    if ((isLogin && (password || username)|| (!isLogin && (password || passwordRepeat ||username))) == ""){
+      alert('Заполните все поля');
+      return;
+    }
+
     try {
       let data;
       if (isLogin) {

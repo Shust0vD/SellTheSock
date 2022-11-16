@@ -4,6 +4,9 @@ import { editPersonalData, getUserInfo } from '../../API/userAPI';
 import './account.css';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 const Account = () => {
   const { user } = useContext(Context);
   const userData = {...user.userInfo};
@@ -37,7 +40,8 @@ const Account = () => {
         <h3>Фамилия</h3>
         <input value={secondName} className="mt-3" placeholder="Введите Фамилию" onChange={(e) => setSecondname(e.target.value)} />
         <h3>Номер телефона</h3>
-        <input value={phoneNumber} className="mt-3" placeholder="Введите Номер телефона" onChange={(e) => setPhonenumber(e.target.value)} />
+        {/*formatPhoneNumber - это функция, которая как раз сама  ваидирует номер. Лучше тут добавить функцию click, как в Auth, но тут уже как сам хочешь*/}
+        <input value={formatPhoneNumber(phoneNumber)} className="mt-3" placeholder="Введите Номер телефона" onChange={(e) => setPhonenumber(e.target.value)} />  
       </div>
       <Button className="btnEdit" onClick={() => changeInfo()}>Редактировать</Button>
     </Container>
