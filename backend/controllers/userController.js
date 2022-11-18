@@ -66,7 +66,7 @@ class UserController {
     if (user.firstname !== firstname) user.firstname = firstname;
     if (user.secondName !== secondName) user.secondName = secondName;
     if (user.phoneNumber !== phoneNumber) user.phoneNumber = phoneNumber;
-    
+
     await user.save();
     return res.json(omit(user.dataValues, ['password']));
   }
