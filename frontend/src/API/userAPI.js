@@ -30,7 +30,7 @@ export const editPersonalData = async (id, firstname, secondName, phoneNumber) =
 };
 
 export const changeRole = async (id, role) => {
-  const { data } = await $authHost.post('api/user/changeRole/', { id, role });
+  const { data } = await $authHost.post('api/user/change-role/', { id, role });
   return data;
 };
 
@@ -40,5 +40,5 @@ export const getAll = async () => {
 };
 
 export const deleteUser = async (id) => {
-  await $authHost.post('api/user/deleteUser/', { id });
+  await $authHost.post('api/user/delete-user/', { id });
 };
