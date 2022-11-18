@@ -60,13 +60,13 @@ class UserController {
       return next(ApiError.badRequest('Некорректный id пользователя'));
     }
     const checkPhone = await User.findOne({ where: { phoneNumber } });
-    if (checkPhone.id !== user.id && phoneNumber !== null) {
+    if (checkPhone && checkPhone.id !== user.id && phoneNumber !== null) {
       return next(ApiError.badRequest('Пользователь с таким номером телефона уже существует'));
     }
     if (user.firstname !== firstname) user.firstname = firstname;
     if (user.secondName !== secondName) user.secondName = secondName;
     if (user.phoneNumber !== phoneNumber) user.phoneNumber = phoneNumber;
-    if (user.role !== role) user.role = role;
+
     await user.save();
     return res.json(omit(user.dataValues, ['password']));
   }
