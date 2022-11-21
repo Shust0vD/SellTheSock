@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Context } from '../index';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { ADMIN_ROUTE, LOGIN_ROUTE, ADS_ROUTE, ACCOUNT_ROUTE, CREATURE_AD_ROUTE } from '../utils/consts';
+import { ADMIN_ROUTE, LOGIN_ROUTE, ADS_ROUTE, ACCOUNT_ROUTE, CREATURE_AD_ROUTE, MY_ADS_ROUTE } from '../utils/consts';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -38,6 +38,9 @@ const NavBar = () => {
               </Button>
               <Button className="btnNavBar" onClick={() => navigate(CREATURE_AD_ROUTE)}>
                 Создать объявление
+              </Button>
+              <Button className="btnNavBar" onClick={() => navigate(MY_ADS_ROUTE + '/' + user.userInfo.id)}>
+                Мои объявления
               </Button>
               <Button className="btnNavBar" onClick={() => logOut()}>
                 Выйти

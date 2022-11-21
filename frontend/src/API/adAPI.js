@@ -11,16 +11,16 @@ export const getAll = async () => {
 };
 
 export const getOne = async (id) => {
-  const { data } = await $authHost.get('api/ad/:id' + id);
+  const { data } = await $authHost.get('api/ad/' + id);
   return data;
 };
 
 export const getUserAds = async (id) => {
-  const { data } = await $authHost.get('api/ad/user-ads/:id' + id);
+  const { data } = await $authHost.get('api/ad/user-ads/' + id);
   return data;
 };
 
 export const deleteAd = async (id) => {
-  const { data } = await $authHost.post('api/ad/delete-ad/:id' + id);
+  const { data } = await $authHost.post('api/ad/delete-ad/' + id);
   return data;
 };
