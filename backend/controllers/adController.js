@@ -4,7 +4,6 @@ const { Ad } = require('../models/models');
 class AdController {
   async create(req, res, next) {
     const { title, description, price, img, userId } = req.body;
-    console.log(req.body);
     if (!title || !price) {
       return next(ApiError.badRequest('Некорректное название или цена'));
     }
