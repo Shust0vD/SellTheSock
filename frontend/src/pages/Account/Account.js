@@ -1,7 +1,7 @@
 import React, { useContext, useState} from 'react';
 import { Context } from '../../index';
 import { editPersonalData, getUserInfo } from '../../API/userAPI';
-import './account.css';
+import './AccountStyles.css';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 const Account = () => {

@@ -1,0 +1,7 @@
+.adContainer {
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin: 30px ;
+}
