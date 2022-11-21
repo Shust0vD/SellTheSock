@@ -1,7 +1,7 @@
 import { $authHost } from './index';
 
-export const create = async (title, description, price, userId) => {
-  const { data } = await $authHost.post('api/ad/create', { title, description, price, userId });
+export const create = async (title, description, price, img, userId) => {
+  const { data } = await $authHost.post('api/ad/create', { title, description, price, img, userId });
   return data;
 };
 
