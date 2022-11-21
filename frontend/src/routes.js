@@ -5,12 +5,14 @@ import {
   ADS_ROUTE,
   ACCOUNT_ROUTE,
   CREATURE_AD_ROUTE,
+  MY_ADS_ROUTE,
 } from './utils/consts';
 import Ads from './pages/Ads';
 import Auth from './pages/Auth';
 import Account from './pages/Account/Account';
 import Admin from './pages/Admin';
 import CreatureAd from './pages/CreatureAd';
+import MyAds from './pages/MyAds';
 
 export const adminRoutes = [
   {
@@ -27,6 +29,10 @@ export const authRoutes = [
   {
     path: CREATURE_AD_ROUTE,
     Component: CreatureAd,
+  },
+  {
+    path: MY_ADS_ROUTE + '/:id',
+    Component: MyAds,
   },
 ];
 

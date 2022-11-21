@@ -5,3 +5,4 @@ export const ADS_ROUTE = '/';
 export const ACCOUNT_ROUTE = '/account';
 export const AD_ROUTE = '/ad';
 export const CREATURE_AD_ROUTE = '/creature';
+export const MY_ADS_ROUTE = '/my-ads';
