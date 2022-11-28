@@ -1,7 +1,12 @@
 .adContainer {
-    display:flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    margin: 30px ;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  margin: 30px;
+}
+
+.adContainer:hover {
+  cursor: pointer;
+  background-color: bisque;
 }
