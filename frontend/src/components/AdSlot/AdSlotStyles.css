@@ -1,7 +1,30 @@
 .adContainer {
     display:flex;
     flex-direction: column;
-    gap: 30px;
-    align-items: center;
-    margin: 30px ;
+    gap: 10px;
+    align-items:flex-start;
+    margin: 10px ;
+    width:23%;
+}
+
+h4 {
+    color:rgb(0, 140, 255);
+    cursor: pointer;
+}
+
+h4:hover {
+    text-decoration-line: underline;
+}
+
+black {
+    color:black;
+    font-weight:600;
+}
+
+gray {
+    color:gray;
+}
+
+img{
+    width: 100%;
 }

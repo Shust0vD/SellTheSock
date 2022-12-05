@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 body {
     background:rgb(250, 252, 255);
     color: #222;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
 }
 
@@ -15,6 +15,7 @@ body {
     color:rgb(250, 252, 255);
     font-weight: 600;
     font-size: 20px;
+    margin:10px;
 }
 
 .navWrapper {
@@ -22,15 +23,17 @@ body {
     height: 50px;
     display:flex;
     align-items: center;
+    
 }
 
 .navContainer {
-    
     display:flex;
     flex-direction: row;
     gap: 30px;
+    width:100%;
     align-items: center;
     margin: 30px ;
+    justify-content: flex-end;
 }
 
 .authContainer {

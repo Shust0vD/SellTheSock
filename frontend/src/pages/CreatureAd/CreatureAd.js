@@ -1,8 +1,9 @@
 import { useState, useContext } from 'react';
-import { Context } from '../index';
-import { create } from '../API/adAPI';
+import { Context } from '../../index';
+import { create } from '../../API/adAPI';
 import { useNavigate } from 'react-router-dom';
-import { ADS_ROUTE } from '../utils/consts';
+import { ADS_ROUTE } from '../../utils/consts';
+import './CreatureAdStyles.css';
 
 const CreatureAd = () => {
   const { user } = useContext(Context);

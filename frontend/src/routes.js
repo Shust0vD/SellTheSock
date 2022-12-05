@@ -7,12 +7,12 @@ import {
   CREATURE_AD_ROUTE,
   MY_ADS_ROUTE,
 } from './utils/consts';
-import Ads from './pages/Ads';
+import Ads from './pages/Ads/Ads';
 import Auth from './pages/Auth';
 import Account from './pages/Account/Account';
 import Admin from './pages/Admin';
-import CreatureAd from './pages/CreatureAd';
-import MyAds from './pages/MyAds';
+import CreatureAd from './pages/CreatureAd/CreatureAd';
+import MyAds from './pages/MyAds/MyAds';
 
 export const adminRoutes = [
   {
