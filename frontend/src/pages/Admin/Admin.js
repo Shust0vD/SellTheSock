@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getAll } from '../API/userAPI';
-import UserSlot from '../components/UserSlot/UserSlot';
+import { getAll } from '../../API/userAPI';
+import UserSlot from '../../components/UserSlot/UserSlot';
+import './AdminStyles.css';
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
@@ -15,11 +16,13 @@ const Admin = () => {
   }, [update]);
 
   return (
-    <div>
+    <div className="admWrapper">
+      <div className="addContainer">
       {users.map((user, index) => (
         <UserSlot user={user} key={index} />
       ))}
-      <button onClick={() => setUpdate(!update)}>Обновить список пользователей</button>
+      <button className="btnEdit" onClick={() => setUpdate(!update)}>Обновить список пользователей</button>
+    </div>
     </div>
   );
 };

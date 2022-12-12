@@ -19,18 +19,20 @@ const CreatureAd = () => {
   };
 
   return (
-    <>
+    <div className="addWrapper">
+      <div className="addContainer">
       <h1>Создание объявления</h1>
       <div>
         <h3>Название</h3>
-        <input value={title} placeholder="Название" onChange={(e) => setTitle(e.target.value)} />
+        <input className="mt-3" value={title} placeholder="Название" onChange={(e) => setTitle(e.target.value)} />
         <h3>Описание</h3>
-        <input value={description} placeholder="Описание" onChange={(e) => setDescription(e.target.value)} />
+        <input className="mt-3" value={description} placeholder="Описание" onChange={(e) => setDescription(e.target.value)} />
         <h3>Цена</h3>
-        <input value={price} placeholder="Цена" onChange={(e) => setPrice(e.target.value)} />
+        <input className="mt-3" value={price} placeholder="Цена" onChange={(e) => setPrice(e.target.value)} />
       </div>
-      <button onClick={() => createAd()}>Создать объявление</button>
-    </>
+      <button className="btnEdit" onClick={() => createAd()}>Создать объявление</button>
+      </div>
+      </div>
   );
 };
 

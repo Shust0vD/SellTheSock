@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { getOne } from '../API/adAPI';
-import { getUserInfo } from '../API/userAPI';
-import { Context } from '../index';
+import { getOne } from '../../API/adAPI';
+import { getUserInfo } from '../../API/userAPI';
+import { Context } from '../../index';
+import './OneAdStyles.css';
 
 const OneAd = () => {
   const [adInfo, setAdInfo] = useState();
@@ -22,7 +23,8 @@ const OneAd = () => {
   }, [update]);
 
   return (
-    <div>
+    <div className="oneAdWrapper">
+    <div className="oneAdContainer">
       {adInfo && userInfo && (
         <>
           <h2>Название: </h2>
@@ -37,6 +39,7 @@ const OneAd = () => {
           {userInfo.phoneNumber && <h3>Номер телефона: {userInfo.phoneNumber}</h3>}
         </>
       )}
+    </div>
     </div>
   );
 };

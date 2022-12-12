@@ -30,8 +30,8 @@ const UserSlot = ({ user }) => {
         <span className="slider round"></span>
       </label>
       <p>Admin</p>
-      <button onClick={() => saveChanges()}>Сохранить роль</button>
-      <button onClick={() => deleteUserFunc()}>Удалить пользователя</button>
+      <button className="btnEdit" onClick={() => saveChanges()}>Сохранить роль</button>
+      <button className="btnEdit" onClick={() => deleteUserFunc()}>Удалить пользователя</button>
     </div>
   );
 };
