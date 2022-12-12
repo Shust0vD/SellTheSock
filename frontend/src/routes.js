@@ -11,10 +11,10 @@ import {
 import Ads from './pages/Ads/Ads';
 import Auth from './pages/Auth';
 import Account from './pages/Account/Account';
-import Admin from './pages/Admin';
+import Admin from './pages/Admin/Admin';
 import CreatureAd from './pages/CreatureAd/CreatureAd';
 import MyAds from './pages/MyAds/MyAds';
-import OneAd from './pages/OneAd';
+import OneAd from './pages/OneAd/OneAd';
 
 export const adminRoutes = [
   {
