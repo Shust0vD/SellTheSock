@@ -2,6 +2,7 @@ import {
   ADMIN_ROUTE,
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
+  AD_ROUTE,
   ADS_ROUTE,
   ACCOUNT_ROUTE,
   CREATURE_AD_ROUTE,
@@ -13,6 +14,7 @@ import Account from './pages/Account/Account';
 import Admin from './pages/Admin';
 import CreatureAd from './pages/CreatureAd/CreatureAd';
 import MyAds from './pages/MyAds/MyAds';
+import OneAd from './pages/OneAd';
 
 export const adminRoutes = [
   {
@@ -48,5 +50,9 @@ export const publicRoutes = [
   {
     path: REGISTRATION_ROUTE,
     Component: Auth,
+  },
+  {
+    path: AD_ROUTE + '/:id',
+    Component: OneAd,
   },
 ];

@@ -1,4 +1,4 @@
-import { $authHost } from './index';
+import { $authHost, $host } from './index';
 
 export const create = async (title, description, price, img, userId) => {
   const { data } = await $authHost.post('api/ad/create', { title, description, price, img, userId });
@@ -6,12 +6,12 @@ export const create = async (title, description, price, img, userId) => {
 };
 
 export const getAll = async () => {
-  const { data } = await $authHost.get('api/ad/all');
+  const { data } = await $host.get('api/ad/all');
   return data;
 };
 
 export const getOne = async (id) => {
-  const { data } = await $authHost.get('api/ad/' + id);
+  const { data } = await $host.get('api/ad/' + id);
   return data;
 };
 
