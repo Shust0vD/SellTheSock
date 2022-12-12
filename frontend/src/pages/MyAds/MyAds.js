@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { getUserAds } from '../API/adAPI';
-import AdSlot from '../components/AdSlot/AdSlot';
-import { Context } from '../index';
-
+import { getUserAds } from '../../API/adAPI';
+import AdSlot from '../../components/AdSlot/AdSlot';
+import { Context } from '../../index';
+import './MyAdsStyles.css';
 const MyAds = () => {
   const [ads, setAds] = useState([]);
   const [update] = useState(true);
@@ -19,10 +19,12 @@ const MyAds = () => {
 
   return (
     <div>
-      Мои объявления
+      <div className='myAdsTitle'>Мои объявления</div>
+      <div className='myAdsContainer'>
       {ads.map((ad, index) => (
         <AdSlot ad={ad} key={index} />
       ))}
+      </div>
     </div>
   );
 };

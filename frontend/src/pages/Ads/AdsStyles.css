@@ -1,0 +1,11 @@
+.adsContainer {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.adsTitle {
+    font-weight: bold;
+    margin: 10px;
+    font-size:large;
+}

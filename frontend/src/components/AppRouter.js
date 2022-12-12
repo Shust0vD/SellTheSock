@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Context } from '../index';
-import Ads from '../pages/Ads';
+import Ads from '../pages/Ads/Ads';
 import { adminRoutes, authRoutes, publicRoutes } from '../routes';
 import { observer } from 'mobx-react-lite';
 
